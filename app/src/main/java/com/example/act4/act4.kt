@@ -220,4 +220,75 @@ fun BiodataScreen() {
 
 
 
+        if (showDialog) {
+            val selectedSkills = mutableListOf<String>().apply {
+                if (isAndroidChecked) add(stringResource(id = R.string.skill_android))
+                if (isUiUxChecked) add(stringResource(id = R.string.skill_ui_ux))
+                if (isWebChecked) add(stringResource(id = R.string.skill_web))
+            }.joinToString(", ")
+
+            Dialog(onDismissRequest = { showDialog = false }) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(colorResource(id = R.color.popup_bg))
+                        .padding(20.dp)
+                ) {
+                    Column {
+                        Text(
+                            text = stringResource(id = R.string.result_title),
+                            color = colorResource(id = R.color.popup_text),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.result_name, namaDepan, namaBelakang),
+                            color = colorResource(id = R.color.popup_text),
+                            fontSize = 14.sp
+                        )
+
+                        Spacer(modifier = Modifier.height(6.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.result_dob, tglLahir),
+                            color = colorResource(id = R.color.popup_text),
+                            fontSize = 14.sp
+                        )
+
+                        Spacer(modifier = Modifier.height(6.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.result_experience, experience),
+                            color = colorResource(id = R.color.popup_text),
+                            fontSize = 14.sp
+                        )
+
+                        Spacer(modifier = Modifier.height(6.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.result_email, email),
+                            color = colorResource(id = R.color.popup_text),
+                            fontSize = 14.sp
+                        )
+
+                        Spacer(modifier = Modifier.height(6.dp))
+
+                        Text(
+                            text = stringResource(id = R.string.result_skills, selectedSkills),
+                            color = colorResource(id = R.color.popup_text),
+                            fontSize = 14.sp
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
 

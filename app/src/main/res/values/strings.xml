@@ -16,5 +16,8 @@
     <string name="result_title">Data Pendaftaran Berhasil :</string>
     <string name="result_name">• Name : %1$s %2$s</string>
     <string name="result_dob">• Tanggal Lahir : %1$s</string>
+    <string name="result_experience">• Pengalaman : %1$s</string>
+    <string name="result_email">• Email : %1$s</string>
+    <string name="result_skills">• Skills : %1$s</string>
 
 </resources>
